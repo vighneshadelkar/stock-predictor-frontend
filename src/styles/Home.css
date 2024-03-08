@@ -1,0 +1,46 @@
+.homeContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.homeWrapper{
+    width: 100%;
+    display: flex;
+    column-gap: 15px;
+    background-color: rgb(238,243,247);
+}
+
+.row{
+    display: flex;
+    column-gap: 15px;
+    background-color: rgb(238,243,247);
+    flex-direction: row;
+    width: 100%;
+}
+
+.col1{
+    margin-top: 20px;
+    background-color: white;
+    height: max-content;
+    border-radius: 8px;
+    min-width: max-content;
+    padding: 10px;
+    flex: 8;
+    width: max-content;
+  
+}
+.col2{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+.col3{
+    flex: 4;
+    margin-top: 20px;
+    background-color: white;
+    height: max-content;
+    border-radius: 8px;
+    padding: 10px;
+}
