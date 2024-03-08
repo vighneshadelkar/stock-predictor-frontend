@@ -23,14 +23,14 @@
     background-color: white;
     height: max-content;
     border-radius: 8px;
-    min-width: max-content;
+    display: flex;
     padding: 10px;
     flex: 8;
-    width: max-content;
-  
+    justify-content: center;
+    align-items: center;
 }
 .col2{
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
     border-radius: 8px;
 

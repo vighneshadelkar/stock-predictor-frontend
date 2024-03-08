@@ -10,8 +10,8 @@ export default function LineChart2() {
           data: [2, 5.5, 2, 8.5, 1.5, 5],
         },
       ]}
-      width={720}
-      height={400}
+      width={745}
+      height={488}
     />
   );
 }

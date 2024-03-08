@@ -25,6 +25,7 @@ const Sidebar = () => {
             <Link to="/" relative="path" className="sidebar-menu-link">
               <i className="fas fa-tachometer-alt"></i>
               <span>Dashboard</span>
+
             </Link>
           </li>
           <li className="sidebar-menu-item">
@@ -82,7 +83,7 @@ const Sidebar = () => {
             </Link>
           </li>
         </ul>
-        <div className="sidebar-progress">
+        {/* <div className="sidebar-progress">
           <div className="sidebar-progress-bar" style={{ width: '80%' }}>
             <span>80%</span>
           </div>
@@ -90,7 +91,7 @@ const Sidebar = () => {
             <span>Get Extra Space</span>
             <span>28/23 GB</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
