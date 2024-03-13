@@ -5,6 +5,7 @@ import { StyledEngineProvider } from "@mui/material/styles";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
+import News from "./Pages/News";
 
 {
   /* <StyledEngineProvider injectFirst>
@@ -19,7 +20,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<div>404 Not Found</div>} /> s
+          <Route path="/news" element={<News />} />
+          <Route path="*" element={<div>404 Not Found</div>} /> 
         </Routes>
       </div>
     </BrowserRouter>

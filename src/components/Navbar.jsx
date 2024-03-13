@@ -20,6 +20,11 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
+            <a href="/news" className="nav-links">
+              News
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="/contact" className="nav-links">
               Contact
             </a>
