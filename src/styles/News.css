@@ -19,6 +19,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .right-news-1 {
@@ -30,6 +31,7 @@
      margin-bottom: 10px;
      width: 500px;
      border-radius: 20px;
+     overflow: hidden;
 }
 
 .right-news-2 {
@@ -41,8 +43,21 @@
      height: 180px;
      width: 500px;
      background-size: cover;
+     overflow: hidden;
 }
-
+.right-news-1:before,
+.right-news-2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  z-index: -1;
+  filter: blur(10px); /* Adjust the blur amount as needed */
+}
 .news-text-l,
 .news-text-r {
   position: absolute;
@@ -54,7 +69,4 @@
   background-color: rgba(0, 0, 0, 0.5); 
   border-bottom-left-radius: 20px; 
   border-bottom-right-radius: 20px; 
-}
-.newsContainer img{
-     filter: blur(6px)
 }

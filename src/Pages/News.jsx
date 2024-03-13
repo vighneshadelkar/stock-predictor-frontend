@@ -3,6 +3,7 @@ import '../styles/News.css'
 import Img1 from '../assets/news-1.jpeg'
 import Img2 from '../assets/news-2.jpeg'
 import Img3 from '../assets/news-3.jpeg'
+import NewsCard from '../components/NewsCard'
 
 function News() {
   return (
@@ -20,6 +21,10 @@ function News() {
             <div className="news-text-r">This is the first news about Stocks</div>
           </div>
         </div>
+      </div>
+      <div className="news-cards-grid">
+        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        
       </div>
     </div>
   )
