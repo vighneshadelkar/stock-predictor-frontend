@@ -1,0 +1,32 @@
+.news-card{
+     /* width: 30%; */
+     margin: 0px 200px;
+}
+
+.news-card {
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     padding:16px;
+     background-color: #fff;
+   }
+   
+   .news-img img {
+     width: 100%;
+     border-radius: 8px; 
+   }
+   
+   .news-date {
+     font-size: 12px; 
+     color: #666;
+   }
+   
+   .news-headline {
+     font-size: 18px; 
+     font-weight: bold;
+   }
+   
+   .news-cont {
+     font-size: 14px; 
+     color: #444; 
+   }
+   

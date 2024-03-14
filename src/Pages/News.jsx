@@ -24,6 +24,9 @@ function News() {
       </div>
       <div className="news-cards-grid">
         <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
         
       </div>
     </div>

@@ -3,6 +3,7 @@
 }
 
 .center-news-grid {
+  margin-left: 80px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
@@ -69,4 +70,13 @@
   background-color: rgba(0, 0, 0, 0.5); 
   border-bottom-left-radius: 20px; 
   border-bottom-right-radius: 20px; 
+}
+.news-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-gap: 20px; */
+}
+
+.news-cards-grid .news-card {
+  margin: 20px; 
 }
