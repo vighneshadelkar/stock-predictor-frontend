@@ -7,7 +7,8 @@ import NewsCard from '../components/NewsCard'
 
 function News() {
   return (
-    <div className="newsContainer">
+    <div className="main-news-cont">
+      <div className="newsContainer">
       <div className="center-news-grid">
         <div className="left-news">
 
@@ -22,13 +23,17 @@ function News() {
           </div>
         </div>
       </div>
+      <div className="heading">
+        <h1 className="headinhead">News</h1>
+      </div>
       <div className="news-cards-grid">
-        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
-        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
-        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
-        <NewsCard img={Img1} headline="this is a news" date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="This is a news." date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="This is a news." date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="This is a news." date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
+        <NewsCard img={Img1} headline="This is a news." date="March 10 2012" cont="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum minus aut commodi magni ex consectetur numquam corporis expedita pariatur."/>
         
       </div>
+    </div>
     </div>
   )
 }

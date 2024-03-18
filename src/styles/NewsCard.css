@@ -1,13 +1,13 @@
 .news-card{
-     /* width: 30%; */
-     margin: 0px 200px;
+  /* margin: 0px 200px; */
 }
 
 .news-card {
+     width: 434px;
      border-radius: 10px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     padding:16px;
-     background-color: #fff;
+     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+     /* padding:16px; */
+     /* background-color: #fff; */
    }
    
    .news-img img {
