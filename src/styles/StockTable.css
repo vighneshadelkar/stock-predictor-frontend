@@ -1,0 +1,15 @@
+.stock-data-table {
+    border-collapse: collapse; /* Remove default table spacing */
+    width: 100%; /* Optional: Set table width */
+  }
+  
+  .stock-data-header,
+  .stock-data-cell {
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Add table borders */
+  }
+  
+  .stock-data-header {
+    font-weight: bold; /* Make headers bold */
+  }
+  

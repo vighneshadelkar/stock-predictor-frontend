@@ -1,17 +1,25 @@
-import * as React from 'react';
-import { LineChart } from '@mui/x-charts/LineChart';
+import * as React from "react";
+import { LineChart } from "@mui/x-charts/LineChart";
+import stockData from "../data/chartData";
 
 export default function LineChart2() {
+  const closePrices = stockData.map((item) => item.close_price);
+  const dates = stockData.map((item) => item.date);
+  const seriesData = [
+    {
+      name: "AAPL",
+      data: closePrices,
+    },
+  ];
+
   return (
-    <LineChart
-      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-      series={[
-        {
-          data: [2, 5.5, 2, 8.5, 1.5, 5],
-        },
-      ]}
-      width={745}
-      height={488}
-    />
+    <div>
+      <LineChart
+        categories={dates}
+        series={seriesData}
+        width={745}
+        height={488}
+      />
+    </div>
   );
 }
