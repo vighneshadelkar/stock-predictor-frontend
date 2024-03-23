@@ -8,7 +8,7 @@ export default function Fundamental() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
+        "X-RapidAPI-Key": '35646dbea5msh47cc576bae2f2c1p1c6c65jsn053d747717e2',
         "X-RapidAPI-Host": "nse-market.p.rapidapi.com",
       },
     };
@@ -31,6 +31,7 @@ export default function Fundamental() {
     };
     fetchData();
   }, [id]);
+  console.log(stockData);
   return (
     <div className="fundamnetal-container">
       <h3>FUNDAMENTALS :</h3>

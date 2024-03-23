@@ -12,11 +12,10 @@ export default function StockDataPg() {
 
   useEffect(() => {
     const fetchData = async (retryCount = 0) => {
-        const API_KEY = process.env.RAPIDAPI_KEY;
         const options = {
           method: "GET",
           headers: {
-            "X-RapidAPI-Key": API_KEY,
+            "X-RapidAPI-Key": '35646dbea5msh47cc576bae2f2c1p1c6c65jsn053d747717e2',
             "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
           },
         };
