@@ -35,7 +35,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="sidebar-menu-dropdown">
-            <Link to="/" className="sidebar-menu-link">
+            <Link to="/stocks" className="sidebar-menu-link">
               <i className="fas fa-lock"></i>
               <span>Stocks</span>
             </Link>

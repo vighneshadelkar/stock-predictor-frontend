@@ -5,8 +5,11 @@ import StockTable from "../components/StockTable";
 import LineChart2 from "../components/LineChart2";
 import Sidebar from "../components/Sidebar";
 import stockData from "../data/chartData";
+import { useParams } from "react-router-dom";
 
 export default function ParticularStockPg() {
+  let { id } = useParams();
+
   return (
     <div className="homeContainer">
       <div className="homeWrapper">
@@ -17,11 +20,11 @@ export default function ParticularStockPg() {
           <div className="row">
             <div className="col">
               <div className="col1">
-                <h2 className="stockName">{stockData[0].stock_id}:</h2>
+                <h2 className="stockName">{id}:</h2>
                 <LineChart2 />
               </div>
               <div className="col1">
-                <h2>{stockData[0].stock_id} Daily data</h2>
+                <h2>{id} Daily data</h2>
                 <StockTable />
               </div>
             </div>

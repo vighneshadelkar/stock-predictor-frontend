@@ -36,7 +36,7 @@ export default function StockTable() {
         }
       } catch (e) {
         console.error("There was an error fetching the stock data", e);
-        if (retryCount < 2) {
+        if (retryCount < 3) {
           setTimeout(() => fetchData(retryCount + 1), 10000 * (retryCount + 1));
         } else {
           setError(e.message);
@@ -67,7 +67,7 @@ export default function StockTable() {
               {Object.entries(timeSeries)
                 .slice(0, 15)
                 .map(([date, data], index) => (
-                  <tr key={`${date}-${index}`}>
+                  <tr key={Math.abs(index-data["4. close"])}>
                     <td className="stock-data-cell">{date}</td>
                     <td className="stock-data-cell">{data["1. open"]}</td>
                     <td className="stock-data-cell">{data["2. high"]}</td>
@@ -79,7 +79,7 @@ export default function StockTable() {
             </tbody>
           </table>
           <div className="link-container">
-            <Link to={`/stock/${id}/all_data`}>See more data...</Link>
+            <Link to={`/stocks/${id}/all_data`}>See more data...</Link>
           </div>
         </>
       )}

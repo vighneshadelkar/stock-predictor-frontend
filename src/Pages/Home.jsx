@@ -1,41 +1,44 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
-import LineChart2 from "../components/LineChart2";
 import "../styles/Home.css";
-import StockList from "../components/StockList";
-import stockData from "../data/chartData";
-import Fundamental from "../components/Fundamental.jsx";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const [symbol, setSymbol] = useState("");  // Initialize symbol to an empty string
+  const navigate = useNavigate();
+
+  function handleInput(e) {
+    setSymbol(e.target.value);  // Directly set symbol to the new value
+  }
+
+  function appendSymbol(e) {
+    e.preventDefault();
+    if (!symbol) {
+      return;
+    } else {
+      navigate(`/stocks/${symbol}`);
+    }
+  }
+
   return (
     <div className="homeContainer">
       <div className="homeWrapper">
         <div className="col">
           <Sidebar />
         </div>
-        <div className="col2">
-          <div className="row">
-            <div className="col">
-              <div className="col1">
-                <h2 className="stockName">{stockData[0].stock_id}:</h2>
-                <LineChart2 />
-              </div>
-              <div className="col1">
-                <h2>{stockData[0].stock_id} Daily data</h2>
-                {/* <StockTable /> */}
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="col3">
-                <StockList />
-              </div>
-              <div className="col3">
-                <Fundamental />
-              </div>
-            </div>
-          </div>
-          <div className="row"></div>
+        <div className="col3">
+          <form onSubmit={appendSymbol}>
+            <input
+              type="text"
+              name="stock-symbol"
+              id=""
+              value={symbol}
+              onChange={handleInput}
+              placeholder="Enter a symbol..."
+            />
+            <button type="submit">Search</button>
+          </form>
         </div>
       </div>
     </div>
