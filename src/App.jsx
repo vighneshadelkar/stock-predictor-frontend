@@ -1,18 +1,11 @@
 import "./App.css";
-import LineChart2 from "./components/LineChart2";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { StyledEngineProvider } from "@mui/material/styles";
-import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
 import News from "./Pages/News";
 import StockDataPg from "./Pages/StockDataPg";
+import ParticularStockPg from "./Pages/ParticularStockPg";
 
-{
-  /* <StyledEngineProvider injectFirst>
-          <LineChart2 />
-        </StyledEngineProvider> */
-}
 
 function App() {
   return (
@@ -23,7 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/news" element={<News />} />
           <Route path="/stock/:id/all_data" element={<StockDataPg/>} />
-          <Route path="/stock/:id" element={<Home/>} />
+          <Route path="/stock/:id" element={<ParticularStockPg/>} />
           <Route path="*" element={<div>404 Not Found</div>} /> 
         </Routes>
       </div>

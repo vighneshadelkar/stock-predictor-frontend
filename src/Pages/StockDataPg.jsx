@@ -1,41 +1,54 @@
 import React, { useEffect, useState } from "react";
-import appl from "../data/applData";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../styles/StockDataPg.css";
 import Sidebar from "../components/Sidebar";
 
 export default function StockDataPg() {
-  const [timeSeries, setTimeSeries] = useState({}); // Initialized as an empty object
+  const [timeSeries, setTimeSeries] = useState({});
   const [error, setError] = useState("");
   let { id } = useParams();
-  console.log(id)
+
+  console.log(id);
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (retryCount = 0) => {
+        const API_KEY = process.env.RAPIDAPI_KEY;
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key": API_KEY,
+            "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
+          },
+        };
       try {
         const response = await fetch(
-          `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${id}&apikey=TK6YQDMFR1HDN1EE`
+          `https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_DAILY&symbol=${id}&outputsize=compact&datatype=json`,
+          options
         );
-        
-        setTimeSeries(appl[0]["Time Series (Daily)"]);
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         } else {
           const result = await response.json();
           if (result["Time Series (Daily)"]) {
-            // Ensure the data exists
+            setTimeSeries(result["Time Series (Daily)"]);
+          } else {
+            throw new Error("No time series data found");
           }
-          //  else {
-          //     throw new Error("No time series data found");
-          //   }
         }
       } catch (e) {
         console.error("There was an error fetching the stock data", e);
-        setError(e.message);
+        if (retryCount < 3) {
+          setTimeout(() => fetchData(retryCount + 1), 2000 * (retryCount + 1));
+        } else {
+          setError(e.message);
+        }
       }
     };
 
     fetchData();
   }, [id]);
+
   return (
     <div className="container">
       <div className="wrapper">
@@ -59,8 +72,8 @@ export default function StockDataPg() {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(timeSeries).map(([date, data]) => (
-                      <tr key={date}>
+                    {Object.entries(timeSeries).map(([date, data], index) => (
+                      <tr key={`${date}-${index}`}>
                         <td className="stock-data-cell">{date}</td>
                         <td className="stock-data-cell">{data["1. open"]}</td>
                         <td className="stock-data-cell">{data["2. high"]}</td>

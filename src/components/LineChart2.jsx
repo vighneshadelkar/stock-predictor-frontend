@@ -18,7 +18,7 @@ export default function LineChart2() {
         categories={dates}
         series={seriesData}
         width={745}
-        height={488}
+        height={438}
       />
     </div>
   );

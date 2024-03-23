@@ -1,12 +1,12 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import LineChart2 from "../components/LineChart2";
-import "../styles/Home.css";
+import Fundamental from "../components/Fundamental";
 import StockList from "../components/StockList";
+import StockTable from "../components/StockTable";
+import LineChart2 from "../components/LineChart2";
+import Sidebar from "../components/Sidebar";
 import stockData from "../data/chartData";
-import Fundamental from "../components/Fundamental.jsx";
 
-export default function Home() {
+export default function ParticularStockPg() {
   return (
     <div className="homeContainer">
       <div className="homeWrapper">
@@ -22,7 +22,7 @@ export default function Home() {
               </div>
               <div className="col1">
                 <h2>{stockData[0].stock_id} Daily data</h2>
-                {/* <StockTable /> */}
+                <StockTable />
               </div>
             </div>
 
