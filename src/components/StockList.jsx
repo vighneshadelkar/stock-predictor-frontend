@@ -11,7 +11,7 @@ export default function StockList() {
   ];
   return (
     <div className="stock-list-container">
-      <h3>Popular Stocks</h3>
+      <h3>POPULAR STOCKS :</h3>
       <div className="stock-list-wrapper">
         <div className="tiny-chart">
           <div className="chartheader">

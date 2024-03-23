@@ -24,7 +24,7 @@ export default function ParticularStockPg() {
                 <LineChart2 />
               </div>
               <div className="col1">
-                <h2>{id} Daily data</h2>
+                <h2>{id} DAILY DATA :</h2>
                 <StockTable />
               </div>
             </div>
