@@ -6,6 +6,27 @@ import Img3 from '../assets/news-3.jpeg'
 import NewsCard from '../components/NewsCard'
 
 function News() {
+  const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://real-time-finance-data.p.rapidapi.com/stock-news',
+  params: {
+    symbol: 'AAPL:NASDAQ',
+    language: 'en'
+  },
+  headers: {
+    'X-RapidAPI-Key': '2a23f9fb6cmsh122c6e99b4f6562p1ad6a3jsnff19d315c172',
+    'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
   return (
     <div className="main-news-cont">
       <div className="newsContainer">
