@@ -5,11 +5,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const [symbol, setSymbol] = useState("");  // Initialize symbol to an empty string
+  const [symbol, setSymbol] = useState("");
   const navigate = useNavigate();
 
   function handleInput(e) {
-    setSymbol(e.target.value);  // Directly set symbol to the new value
+    setSymbol(e.target.value);
   }
 
   function appendSymbol(e) {
@@ -27,18 +27,20 @@ export default function Home() {
         <div className="col">
           <Sidebar />
         </div>
-        <div className="col3">
-          <form onSubmit={appendSymbol}>
-            <input
-              type="text"
-              name="stock-symbol"
-              id=""
-              value={symbol}
-              onChange={handleInput}
-              placeholder="Enter a symbol..."
-            />
-            <button type="submit">Search</button>
-          </form>
+        <div className="col2">
+          <div>
+            <form onSubmit={appendSymbol} className="inputCol">
+              <input
+                type="text"
+                name="stock-symbol"
+                className="searchStock"
+                value={symbol}
+                onChange={handleInput}
+                placeholder="Enter a symbol..."
+              />
+              <button type="submit" className="search-btn">Search</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
