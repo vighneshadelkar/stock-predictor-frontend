@@ -36,7 +36,7 @@ export default function AllStocks() {
                 onChange={handleInput}
                 placeholder="Enter a symbol..."
               />
-              <button type="submit">Search</button>
+              <button type="submit" className="search-btn">Search</button>
             </form>
           </div>
         </div>
