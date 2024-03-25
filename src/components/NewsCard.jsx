@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/NewsCard.css'
+import { Link } from 'react-router-dom';
 
 function NewsCard(props) {
      return (
@@ -12,6 +13,7 @@ function NewsCard(props) {
                </div>
                <div className="news-headline">{props.headline}</div>
                <div className="news-cont">{props.cont}</div>
+               <Link to={props.link}>Read More</Link>
           </div>
      )
 }

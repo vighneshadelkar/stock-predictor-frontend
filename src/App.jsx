@@ -6,6 +6,7 @@ import News from "./Pages/News";
 import StockDataPg from "./Pages/StockDataPg";
 import ParticularStockPg from "./Pages/ParticularStockPg";
 import AllStocks from "./Pages/AllStocks";
+import MainHome from "./Pages/MainHome";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/stocks/:id/all_data" element={<StockDataPg/>} />
           <Route path="/stocks/:id" element={<ParticularStockPg/>} />
           <Route path="/stocks" element={<AllStocks/>} />
+          <Route path="/home" element={<MainHome/>} />
           <Route path="*" element={<div>404 Not Found</div>} /> 
         </Routes>
       </div>
