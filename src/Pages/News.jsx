@@ -5,9 +5,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/News.css';
 import NewsCard from '../components/NewsCard';
+import { Link } from 'react-router-dom';
 
 function News() {
   const [newsData, setNewsData] = useState([]);
+  const [gridNewsData, setgridNewsData] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -22,14 +24,19 @@ function News() {
             'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
           }
         });
-        setNewsData(response.data.data.news);
-        console.log(newsData)
+        const fetchedNews = response.data.data.news;
+        const firstThreeNews = fetchedNews.slice(0, 3);
+        setgridNewsData(firstThreeNews);
+        setNewsData(fetchedNews.slice(3));
+
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchNews();
+    console.log(gridNewsData)
+    console.log(newsData)
   }, []);
 
 
@@ -42,28 +49,44 @@ function News() {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
-      timeZone: 'Asia/Kolkata' // Set the time zone to IST
+      timeZone: 'Asia/Kolkata' 
     };
     return date.toLocaleString('en-IN', options);
   }
-  
+
 
   return (
     <div className="main-news-cont">
       <div className="newsContainer">
-        <div className="center-news-grid">
-          <div className="left-news">
-          <div className="news-text-l">This is the first news about Stocks</div>
-          </div>
-          <div className="right-news">
-          <div className="right-news-1">
-             <div className="news-text-r">This is the first news about Stocks</div>
-           </div>
-           <div className="right-news-2">
-             <div className="news-text-r">This is the first news about Stocks</div>
-           </div>
-          </div>
-        </div>
+        {gridNewsData.length > 1 &&
+          <div className="center-news-grid">
+            <div className="left-news" style={{ backgroundImage: `url(${gridNewsData[0].article_photo_url})` }}>
+              <Link to={gridNewsData[0].article_url}>
+                <div className="news-text-l">
+                  {gridNewsData[0].article_title}
+                </div>
+
+              </Link>
+            </div>
+            <div className="right-news">
+              <div className="right-news-1" style={{ backgroundImage: `url(${gridNewsData[1].article_photo_url})` }}>
+              <Link to={gridNewsData[1].article_url}>
+                <div className="news-text-r">
+                  {gridNewsData[1].article_title}
+                </div>
+
+              </Link>
+              </div>
+              <div className="right-news-2"  style={{ backgroundImage: `url(${gridNewsData[2].article_photo_url})` }}>
+              <Link to={gridNewsData[2].article_url}>
+                <div className="news-text-r">
+                  {gridNewsData[2].article_title}
+                </div>
+
+              </Link>
+              </div>
+            </div>
+          </div>}
         <div className="heading">
           <h1 className="headinhead">News</h1>
         </div>

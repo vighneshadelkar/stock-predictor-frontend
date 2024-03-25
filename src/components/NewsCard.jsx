@@ -13,7 +13,7 @@ function NewsCard(props) {
                </div>
                <div className="news-headline">{props.headline}</div>
                <div className="news-cont">{props.cont}</div>
-               <Link to={props.link}>See More</Link>
+               <Link to={props.link}>Read More</Link>
           </div>
      )
 }
