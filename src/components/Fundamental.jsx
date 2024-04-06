@@ -15,7 +15,7 @@ export default function Fundamental() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://nse-market.p.rapidapi.com/stock_metrics?symbol=${id}`,
+          `https://nse-market.p.rapidapi.com/stock_metrics?symbol=TCS`,
           options
         );
 

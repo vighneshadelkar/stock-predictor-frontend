@@ -19,7 +19,7 @@ export default function StockList() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://trading-view.p.rapidapi.com/market/get-movers?exchange=NSE&name=percent_change_gainers&locale=en`,
+          `https://trading-view.p.rapidapi.com/market/get-movers?exchange=NASDAQ&name=percent_change_gainers&locale=en`,
           options
         );
 
@@ -46,7 +46,7 @@ export default function StockList() {
         {stocks.length > 0 && (
           <div className="tiny-chart">
             <div className="chartheader">
-              <h3>{stocks[0].s}</h3>
+              <h3>{stocks[0].s.slice(8,stocks[0].s.length)}</h3>
               <p>Change: {stocks[0].f[0]}%</p>
             </div>
             <TinyLineChart />
@@ -62,7 +62,7 @@ export default function StockList() {
           <tbody>
             {stocks.slice(1, 5).map((stock, index) => (
               <tr key={index}>
-                <td className="stock_name">{stock.s}</td>
+                <td className="stock_name">{stock.s.slice(8,stock.s.length)}</td>
                 <td>{stock.f[0]}%</td>
               </tr>
             ))}
