@@ -20,7 +20,7 @@ function News() {
             language: 'en'
           },
           headers: {
-            'X-RapidAPI-Key': '2a23f9fb6cmsh122c6e99b4f6562p1ad6a3jsnff19d315c172',
+            'X-RapidAPI-Key': '35646dbea5msh47cc576bae2f2c1p1c6c65jsn053d747717e2',
             'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
           }
         });
