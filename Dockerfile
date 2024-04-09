@@ -1,5 +1,10 @@
-FROM node:lts AS production
+FROM node:21-slim
 WORKDIR /react
+
+# COPY package.json .
+
+# RUN npm install
+
 COPY . .
-RUN npm install
+
 RUN npm run build
