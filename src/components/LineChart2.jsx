@@ -14,7 +14,7 @@ export default function LineChart2() {
   useEffect(() => {
     const getPoints = async (retryCount = 0) => {
       try {
-        const response = await fetch(`http://3.90.66.200/api/stockprice/${id}/?time_step=100&future_date=30`);
+        const response = await fetch(`http://52.200.167.74/api/stockprice/${id}/?time_step=100&future_date=30`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
