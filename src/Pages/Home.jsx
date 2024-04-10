@@ -3,7 +3,6 @@ import Sidebar from "../components/Sidebar";
 import "../styles/Home.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LineChart3 from "../components/LineChart3";
 
 export default function Home() {
   const [symbol, setSymbol] = useState("");
