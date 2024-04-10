@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import "../styles/Home.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LineChart3 from "../components/LineChart3";
 
 export default function Home() {
   const [symbol, setSymbol] = useState("");
@@ -28,7 +29,10 @@ export default function Home() {
         setStocks([data]);
 
         setTenStock(
-          data.filter((stock) => (stock.exchangeShortName === "NASDAQ" && stock.type === "stock"))
+          data.filter(
+            (stock) =>
+              stock.exchangeShortName === "NASDAQ" && stock.type === "stock"
+          )
         );
       } catch (error) {
         setError(error.message);
@@ -36,19 +40,13 @@ export default function Home() {
     };
     fetchAllStocks();
   }, []);
-  console.log(tenStock)
+  console.log(tenStock);
 
   function appendSymbol(e) {
     e.preventDefault();
     if (symbol) {
       navigate(`/stocks/${symbol}`);
     }
-  }
-
-  function handleClick(stock) {
-    const i=stock.symbol.split("").indexOf(".")
-    const symbol=stock.symbol.slice(0,i);
-    navigate(`/stocks/${symbol}`);
   }
 
   return (

@@ -1,4 +1,5 @@
 import * as React from "react";
+import Stack from "@mui/material/Stack";
 import { LineChart } from "@mui/x-charts/LineChart";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -14,7 +15,9 @@ export default function LineChart2() {
   useEffect(() => {
     const getPoints = async (retryCount = 0) => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/stockprice/${id}/?time_step=100&future_date=30`);
+        const response = await fetch(
+          `http://127.0.0.1:8000/api/stockprice/${id}/?time_step=100&future_date=30`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -44,21 +47,15 @@ export default function LineChart2() {
     return <div>Loading...</div>;
   }
 
-  const seriesData = [
-    {
-      name: id,
-      data: closePrices,
-    },
-  ];
-
   return (
-    <div>
+    <Stack sx={{ width: "100%" }}>
       <LineChart
-        categories={dates}
-        series={seriesData}
-        width={745}
+        xAxis={[{ data: dates, scaleType: "point" }]}
+        series={[{ data: closePrices }]}
         height={438}
+        width={745}
+        margin={{ top: 10, bottom: 20 }}
       />
-    </div>
+    </Stack>
   );
 }
