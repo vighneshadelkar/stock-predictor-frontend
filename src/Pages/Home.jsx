@@ -28,7 +28,10 @@ export default function Home() {
         setStocks([data]);
 
         setTenStock(
-          data.filter((stock) => (stock.exchangeShortName === "NASDAQ" && stock.type === "stock"))
+          data.filter(
+            (stock) =>
+              stock.exchangeShortName === "NASDAQ" && stock.type === "stock"
+          )
         );
       } catch (error) {
         setError(error.message);
@@ -36,19 +39,13 @@ export default function Home() {
     };
     fetchAllStocks();
   }, []);
-  console.log(tenStock)
+  console.log(tenStock);
 
   function appendSymbol(e) {
     e.preventDefault();
     if (symbol) {
       navigate(`/stocks/${symbol}`);
     }
-  }
-
-  function handleClick(stock) {
-    const i=stock.symbol.split("").indexOf(".")
-    const symbol=stock.symbol.slice(0,i);
-    navigate(`/stocks/${symbol}`);
   }
 
   return (
