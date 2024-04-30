@@ -6,6 +6,7 @@ import LineChart2 from "../components/LineChart2";
 import Sidebar from "../components/Sidebar";
 import stockData from "../data/chartData";
 import { useParams } from "react-router-dom";
+import Sentimental from "../components/Sentimental";
 
 export default function ParticularStockPg() {
   let { id } = useParams();
@@ -36,9 +37,12 @@ export default function ParticularStockPg() {
               <div className="col3">
                 <Fundamental />
               </div>
+            <div className="col3">
+
+            <Sentimental/>
+            </div>
             </div>
           </div>
-          <div className="row"></div>
         </div>
       </div>
     </div>
