@@ -16,7 +16,7 @@ export default function LineChart2() {
     const getPoints = async (retryCount = 0) => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/stockprice/${id}/?time_step=100&future_date=30`
+          `http://54.163.149.228/api/stockprice/${id}/?time_step=100&future_date=30`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
